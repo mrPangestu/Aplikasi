@@ -1,0 +1,838 @@
+*{
+    
+  box-sizing: border-box;
+}
+body {
+  overflow: auto;
+}
+/* POP-UP CREATE */
+.popup {
+  display: none;
+  position: fixed;
+  align-items: center;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+.popup-ubah {
+  display: none;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+.close {
+  position: relative;
+  bottom: 40px;
+  left: 50%;
+  padding: 0;
+  text-align: center;
+  font-size: 50px;
+  margin: 0;
+  cursor: pointer;
+  z-index: 11;
+  border: none;
+  color: aliceblue;
+}
+.container-create {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px 100px;
+  margin-top: 35px;
+}
+.container-create:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: blur(50px);
+}
+.container-box {
+  max-width: 1020px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(246, 246, 246);
+  box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19); 
+}
+.container-box-ubah {
+  max-width: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(246, 246, 246);
+  box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19); 
+}
+.left {
+  background-color: #f7fcff;
+  padding: 25px 40px;
+}
+.right {
+  height :100%;
+  padding: 20px 20px;
+  background: linear-gradient(50deg, #72b0da, #1233f0);
+}
+.right h2 {
+  margin-top: -45px;
+  padding: 0;
+  color: aliceblue;
+  font-size: 30px;
+  bottom: 200px;
+}
+.tgl-waktu {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content:space-between;
+}    
+.pilihan {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content:space-between;
+}
+.right select{
+  color: rgba(139, 139, 139, 0.746);
+}   
+.right select option{
+  color: rgb(28, 28, 28);
+}   
+.right select option[disabled] {
+  color: #8888888d; /* Warna teks placeholder */
+  font-style: italic; /* Gaya huruf italic untuk menunjukkan placeholder */
+}
+/* Gaya untuk opsi terpilih */
+.right select option:selected {
+  font-weight: bold; /* Contoh: Membuat teks terpilih menjadi lebih tebal */
+}
+.field1 {
+  display: block;
+  width: 210px;
+  margin-left: 0;
+  padding: 10px 10px ;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0);
+  background-color: #eaf1f6;
+  font-size: 1.1rem;
+  transition: .3s;
+  border-radius: 10px;
+  margin-bottom: 22px;
+}
+.field{
+  display: block;
+  width: 430px;
+  padding: 10px 10px ;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0);
+  background-color: #eaf1f6;
+  font-size: 1.1rem;
+  margin-bottom: 0px;
+  transition: .3s;
+  border-radius: 10px;
+}
+.field:hover, 
+.field1:hover{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.field select:hover{
+  background-color: rgba(255, 255, 255, 0.841);
+}
+.field:focus{
+  background-color: #fff;
+  border: 2px solid rgba(30, 85, 250, 0.47);
+}
+.field1:focus{
+  background-color: #fff;
+  border: 2px solid rgba(30, 85, 250, 0.47);
+}
+.area{
+  min-height: 150px ;
+}
+.btn-submit-create{
+  width: 100%;
+  padding: 10px 10px;
+  font-size: 10px;
+  background-color:aliceblue;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: rgb(15, 2, 110);
+  font-size: 15px;
+  border-radius: 10px;
+  transition: .3s;
+}
+.btn-submit-create:hover{
+  background-color: rgba(0, 0, 0, 0.3);
+  color: aliceblue;
+}
+
+/* KALENDER CREATE*/
+#calendar-container {
+font-family: Arial, sans-serif;
+max-width: 600px;
+margin: 20px auto;
+justify-content: space-between;
+}
+.label-calender select{
+  margin-right: 210px;
+}
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.left button {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #3586bd;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: transform 0.2s ease-in-out;
+}
+.left button:hover{
+  background-color: #08456d;
+}
+.left table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 10px;
+margin-bottom: 40px;
+}
+.left th, td {
+padding: 10px;
+text-align: center;
+border: 1px solid #979797;
+}
+.left th {
+background-color: #f2f2f2;
+}
+.left td {
+cursor: pointer;
+}
+.left td:hover {
+  background-color: #3498db;
+}
+#event-form {
+display: none;
+margin-top: 20px;
+}
+.left td.selected-date {
+  background-color: #0f517e;
+  color: #fff;
+}
+/* POP-UP KATEGORI */
+.tambah-kategori {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+backdrop-filter: blur(10px);
+z-index: 10;
+}
+.tambah-kategori-content {
+position: absolute;
+top: 40%;
+left: 50%;
+width: 400px;
+transform: translate(-50%, -50%);
+background-color: #3498db00;
+padding: 20px 20px;
+border-radius: 5px;
+z-index: 11;
+}
+.close-detail {
+position: relative;
+margin: -30px;
+padding: 0;
+top: 0;
+left: 340px;
+font-size: 40px;
+cursor: pointer;
+z-index: 12;
+border: none;
+}
+.container2 {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.nama-kategori {
+  width: 200px;
+  padding: 8px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button[name="tambah_kategori"] {
+  padding: 8px 12px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button[name="tambah_kategori"]:hover {
+  background-color: #45a049;
+}
+label[for="hapus_dropdown"] {
+  margin-top: 10px;
+  display: block;
+}
+.hapus-dropdown {
+  width: 200px;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+button[name="hapus_kategori"] {
+  padding: 8px 12px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button[name="hapus_kategori"]:hover {
+  background-color: #d32f2f;
+}
+/* POP-UP DETAIL TUGAS */
+.popup1 {
+display: none;
+position: fixed;
+width: 700px;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+padding: 20px;
+background-color: #fff;
+backdrop-filter: blur(10px);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+z-index: 10;
+}
+.overlay1 {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.5);
+backdrop-filter: blur(10px);
+z-index: 9;
+}
+.popup-content1 {
+text-align: center;
+width: 800px;
+}
+.close-btn1 {
+cursor: pointer;
+color: #3498db;
+}
+.detail-container {
+  flex-direction: row;
+  width: 500px;
+}
+/* POP-UP INPUT DETAIL */
+.popup-input-detail {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 11;
+}
+.popup-input-detail-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 12;
+}
+.popup-input-detail-content .close-input {
+  position: absolute;
+  top: -15px;
+  right: 0px;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 13;
+}
+.popup-input-detail-content form {
+  display: flex;
+  flex-direction: row;
+}
+.popup-input-detail-content label {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.popup-input-detail-content input {
+  padding: 10px;
+  margin-right: 16px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.popup-input-detail-content button {
+  background-color: #174cc9;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 16px;
+  font-size: 14px;
+}
+.popup-input-detail-content button:hover {
+  background-color: #0635a2;
+}
+.btn_update_detail_tugas {
+  width: 60px;
+}
+
+/* Detail Tugas */
+.detail-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 1000px;
+  height: 550px;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  background: linear-gradient(0deg, #72b0da, #1233f0);
+  background-image: url(img/8270289.jpg);
+  background-size: cover;
+  border-radius: 10px;
+}
+
+
+.detail-tugas-content{
+  background-color: rgba(244, 244, 244, 0.5);
+  border-radius: 20px;
+  border: 1px solid;
+  height: 430px;
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+
+}
+
+
+.tabel-detail-wrapper {
+  max-height: 380px; /* Sesuaikan tinggi maksimal sesuai kebutuhan */
+  overflow-y: auto;
+  }
+
+  .tabel-detail-header,
+  .tabel-detail-content {
+  width: 100%;
+  border-collapse: collapse;
+  }
+
+  .tabel-detail-header th,
+  .tabel-detail-content td {
+  padding: 10px;
+  text-align: center;
+  }
+
+  .tabel-detail-header th {
+  position: sticky;
+  top: 0;
+  background-color: #ffffffe0;
+  z-index: 11;
+  }
+
+  .tabel-detail-content {
+  margin-top: -1px; /* Untuk menghindari celah antara header dan konten */
+  }
+
+
+
+.head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 50px 0 150px;
+  backdrop-filter: Blur(3px);
+  align-items: center;
+  
+}
+.head #popup-content-judulTugas-result {
+  margin-bottom: 20px;
+  padding: 0;
+  }
+
+
+.head .btn_c_d {
+  background-color:#174cc9; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.head .btn_c_d1 {
+  background-color:#174cc9; /* Green */
+  border: none;
+  color: white;
+  padding: 0 5px;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: none;
+}
+
+.head .btn_c_d:hover {
+  background-color: #072469;
+  scale: 1.02;
+}
+
+#detail-close-btn {
+  position: absolute;
+  top: -15px;
+  right: 10px;
+  cursor: pointer;
+  color: white;
+  font-size: 50px;
+  z-index: 11;
+}
+/* tandai detai tugas */
+.tabel-detail-content tr {
+  transition: background-color 0.2s; /* Efek transisi saat dicoret */
+}
+
+.tabel-detail-content tr.dicoret {
+  background-color: #b5d5ff; /* Warna latar belakang saat dicoret */
+}
+
+/* Menu Tim */
+.popup-tugas-tim{
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  overflow: scroll;
+}
+.tim-popup{
+  display: none;
+  align-items: center;
+}
+.daftar-tim-popup {
+  display: none;
+}
+.dafar-tim-container {
+  width: 300px;
+  height: 500px;
+  padding: 5px;
+  margin: 30px 5px 5px 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  background: linear-gradient(180deg,rgb(184, 125, 255), rgb(81, 78, 233));
+  background-size: cover;
+  border-radius: 10px;
+  z-index: 10;
+  font-size: 14px;
+  
+}
+
+.tim-container {
+  width: 300px;
+  height: 500px;
+  padding: 5px;
+  margin: 30px 5px 5px 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  background: linear-gradient(0deg, #72b0da, #1233f0);
+  background-image: url(img/ungu1.jpg);
+  background-size: cover;
+  background-position: right;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+
+.detail-tim-content{
+  background-color: rgba(244, 244, 244, 0.5);
+  border-radius: 10px;
+  border: 1px solid;
+  height: 87%;
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+}
+
+
+.head-tim {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  backdrop-filter: Blur(3px);
+  gap: 10px;
+  }
+
+.head-tim h4{
+  text-align: center;
+  font-size: 28px;
+  margin :5px;
+  right: inherit;
+  padding-bottom:15px;
+  align-items: center;
+}
+
+.head-tim button {
+  background-color: #0635a2; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+#daftar-tim-close-btn {
+  position: relative;
+  color: white;
+  top: 0;
+  left: 40px;
+  cursor: pointer;
+}
+
+.skala-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 700px;
+  height: 500px;
+  transform: translate(-50%, -50%);
+  padding: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  background: linear-gradient(0deg, #72b0da, #1233f0);
+  background-image: url(img/8270289.jpg);
+  background-size: cover;
+  border-radius: 10px;
+  
+}
+
+
+.skala-tugas-content{
+  background-color: rgba(244, 244, 244, 0.5);
+  border-radius: 20px;
+  border: 1px solid;
+  height: 450px;
+  margin-top: 40px;
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+  font-size: 15px;
+
+}
+
+
+.tabel-skala-wrapper {
+  max-height: 380px; /* Sesuaikan tinggi maksimal sesuai kebutuhan */
+  overflow-y: auto;
+  }
+
+  .tabel-skala-header,
+  .tabel-skala-content {
+  width: 100%;
+  border-collapse: collapse;
+  }
+
+  .tabel-skala-header th,
+  .tabel-skala-content td {
+  padding: 10px;
+  text-align: center;
+  }
+
+  .tabel-skala-header th {
+  position: sticky;
+  top: 0;
+  background-color: #ffffffe0;
+  z-index: 11;
+  }
+
+  .tabel-skala-content {
+  margin-top: -1px; /* Untuk menghindari celah antara header dan konten */
+  }
+
+#skala-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: white;
+  font-size: 15px;
+}
+
+
+@media screen and (max-width: 1023px) {
+  .container-box {
+      grid-template-columns: 1fr;
+  }
+  .left {
+      display: none;
+  }
+  .right {
+      padding: 20px;
+      background-color: #469cd5;
+  }
+  .right h2 {
+      margin: 20px 0;
+      margin-top: -50px;
+  }
+  .field1,
+  .field {
+      width: 100%;
+  }
+  .pilihan {
+    gap: 5px;
+  }
+  .tgl-waktu {
+    gap: 5px;
+  }
+  .close {
+    left: 200px;
+  }
+  .detail-container {
+    width: 700px;
+    padding: 10px;
+    height: 525px;
+  }
+  .head {
+    justify-content: center;
+    padding: 0;
+    gap: 70px;
+  }
+  
+  .head .btn_c_d {
+    padding: 10px 20px;
+    margin-left: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+}
+@media screen and (max-width: 725px) {
+  .detail-container {
+    width: 95%;
+    padding: 10px;
+    height: 525px;
+  }
+  .popup-input-detail-content{
+    width: 80%;
+  }
+  .popup-tugas-tim{
+    flex-direction:column;
+    overflow: scroll;
+    justify-content:start;
+  }
+  .skala-container {
+    width: 95%;
+
+  }
+}
+@media screen and (max-width: 480px) {
+  .popup-content {
+      width: 100%;
+      padding: 20px;
+  }
+  .container-create {
+      padding: 10px;
+  }
+  .field1,
+  .field {
+      font-size: 1rem;
+  }
+  #detail-close-btn {
+    top: -10px;
+    font-size: 30px;
+    z-index: 11;
+  }
+  .head .btn_c_d {
+    display: none;
+  }
+  .head .btn_c_d1 {
+    display: block;
+  }
+  .head #popup-content-judulTugas-result {
+    font-size: 12px;
+    margin-bottom: 20px;
+    padding: 0;
+    align-self: center;
+    }
+  .head {
+    margin-right: 50px;
+    gap: 30px;
+  }
+  .close {
+    left: 50%;
+  }
+  .popup-input-detail-content{
+    padding: 7px;
+    width: 300px;
+    top: 30%;
+  }
+  .tabel-detail-content span {
+    display: none;
+    
+  }
+  .popup-input-detail-content form input {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .container2 {
+    width: 85%;
+
+  }
+}
